@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFEFPlayground"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:local="clr-namespace:EFWithRepoPattern"
+        xmlns:userCtrls="clr-namespace:EFWithRepoPattern.UserControls"
+        mc:Ignorable="d" Title="MainWindow" Height="450" Width="800">
+    
     <Grid>
-        <Line/>
+        <userCtrls:CompanyList Width="200" Margin="0, 25, 0, 25"/>
     </Grid>
 </Window>

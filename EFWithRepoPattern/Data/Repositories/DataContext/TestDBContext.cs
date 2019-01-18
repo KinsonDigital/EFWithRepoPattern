@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EFWithRepoPattern.Data.Entities;
 
 namespace EFWithRepoPattern.Data.Repositories.DataContext
@@ -13,6 +8,7 @@ namespace EFWithRepoPattern.Data.Repositories.DataContext
     {
         public TestDBContext() : base(ConfigurationManager.ConnectionStrings["TestDB"].ConnectionString)
         {
+            
         }
 
 

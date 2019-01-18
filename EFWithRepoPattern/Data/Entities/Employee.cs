@@ -1,14 +1,12 @@
 namespace EFWithRepoPattern.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("Employee")]
     public partial class Employee
     {
+        #region Props
         [Key]
         public int EmployeeID { get; set; }
 
@@ -25,5 +23,6 @@ namespace EFWithRepoPattern.Data.Entities
         public int Age { get; set; }
 
         public virtual Company Company { get; set; }
+        #endregion 
     }
 }

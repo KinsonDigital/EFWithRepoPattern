@@ -1,27 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EFWithRepoPattern.Data.Entities;
 using EFWithRepoPattern.Data.Repositories.Core;
 using EFWithRepoPattern.Data.Repositories.DataContext;
 
 namespace EFWithRepoPattern.Data.Repositories
 {
+    /// <summary>
+    /// Pulls and pushes data to the database related to <see cref="Company"/> data.
+    /// </summary>
     public class CompanyRepository : Repository<Company, TestDBContext>
     {
-        private TestDBContext _context;
-
-
-        public CompanyRepository() : base(new TestDBContext())
+        #region Constructors
+        /// <summary>
+        /// Creates a new instance of <see cref="CompanyRepository"/>.
+        /// </summary>
+        /// <param name="context">The database context of where the <see cref="Company"/> data is located.</param>
+        public CompanyRepository(TestDBContext context) : base(context)
         {
-            _context = GetDataContext();
         }
+        #endregion
 
+
+        #region Props
+        /// <summary>
+        /// Gets all of the data related to companies.
+        /// </summary>
+        /// <returns></returns>
         public override List<Company> GetAll()
         {
-            return _context.Companies.ToList();
+            return Context.Companies.ToList();
         }
+        #endregion
     }
 }

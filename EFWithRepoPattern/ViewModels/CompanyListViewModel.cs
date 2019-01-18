@@ -1,32 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EFWithRepoPattern.Data.Entities;
-using EFWithRepoPattern.Data.Repositories.Core;
-using EFWithRepoPattern.Data.Repositories.DataContext;
+﻿using EFWithRepoPattern.Data.Entities;
+using EFWithRepoPattern.Data.Repositories;
 
 namespace EFWithRepoPattern.ViewModels
 {
-    public class CompanyListViewModel
+    /// <summary>
+    /// Holds all of the company related data for all companies.
+    /// </summary>
+    public class CompanyListViewModel : ViewModelBase
     {
-        private IRepository<Company, TestDBContext> _repository;
-
-        public CompanyListViewModel(IRepository<Company, TestDBContext> repository)
+        #region Constructors
+        /// <summary>
+        /// Creates a new instance of <see cref="CompanyListViewModel"/>.
+        /// </summary>
+        /// <param name="repository">The repository used to get the data.</param>
+        public CompanyListViewModel(CompanyRepository repository) : base(repository)
         {
-            _repository = repository;
-
-            var result = _repository.GetAll();
-
-            //var totalEmployees = result[0].Employees.Count;
-
-            //var employee = result[0].Employees.ToList()[0];
-
-            //var firstEmployeeFullname = $"{employee.FirstName} {employee.LastName}";
+            Companies = _repository.GetAll().ToArray();
         }
+        #endregion
 
-        public ObservableCollection<Company> Companies { get; set; }
+
+        #region Props
+        /// <summary>
+        /// Gets or sets the list of companies.
+        /// </summary>
+        public Company[] Companies { get; set; }
+        #endregion
     }
 }
