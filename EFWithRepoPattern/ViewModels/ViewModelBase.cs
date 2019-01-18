@@ -1,6 +1,4 @@
-﻿using EFWithRepoPattern.Data.Entities;
-using EFWithRepoPattern.Data.Repositories.Core;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace EFWithRepoPattern.ViewModels
@@ -15,19 +13,12 @@ namespace EFWithRepoPattern.ViewModels
         #endregion
 
 
-        #region Fields
-        protected IRepository<Company> _repository;
-        #endregion
-
-
         #region Constructors
         /// <summary>
         /// Creates a new instance of <see cref="ViewModelBase"/>.
         /// </summary>
-        /// <param name="repository">The repository used to get the view model related data.</param>
-        public ViewModelBase(IRepository<Company> repository)
+        public ViewModelBase()
         {
-            _repository = repository;
         }
         #endregion
 

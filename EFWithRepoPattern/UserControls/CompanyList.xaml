@@ -3,16 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" Name="this">
+             mc:Ignorable="d" Name="this" Background="White">
 
     <Grid DataContext="{Binding ElementName=this, Path=ViewModel}"
           d:DataContext="{d:DesignData Source=/Data/DesignSampleData/CompaniesSampledata.xaml}">
-        <ListBox ItemsSource="{Binding Path=Companies}">
-            <ListBox.ItemTemplate>
-                <ItemContainerTemplate>
-                    <Label Content="{Binding Path=Name}"/>
-                </ItemContainerTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <StackPanel>
+            <Label Content="Choose A Company:" FontWeight="Bold"/>
+            <ListBox ItemsSource="{Binding Path=Companies}"
+                     SelectedItem="{Binding ElementName=this, Path=SelectedCompany, Mode=TwoWay}">
+                <ListBox.ItemTemplate>
+                    <ItemContainerTemplate>
+                        <Label Content="{Binding Path=Name}"/>
+                    </ItemContainerTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
     </Grid>
 </UserControl>

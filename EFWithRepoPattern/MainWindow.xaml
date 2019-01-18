@@ -8,6 +8,13 @@
         mc:Ignorable="d" Title="MainWindow" Height="450" Width="800">
     
     <Grid>
-        <userCtrls:CompanyList Width="200" Margin="0, 25, 0, 25"/>
+        <StackPanel Orientation="Horizontal">
+            <userCtrls:CompanyList Width="200" Margin="10, 25, 5, 25"/>
+
+            <userCtrls:EmployeeList x:Name="EmployeeList" Margin="5, 25, 0, 25"/>
+
+            <Button Width="100" Height="25" Content="Click Me"
+                    Click="Button_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

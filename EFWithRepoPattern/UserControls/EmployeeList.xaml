@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="EFWithRepoPattern.UserControls.EmployeeList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EFWithRepoPattern.UserControls"
+             mc:Ignorable="d" Background="White">
+    
+    <Grid DataContext="{Binding ElementName=this, Path=ViewModel}"
+          d:DataContext="{d:DesignData Source=/Data/DesignSampleData/EmployeeSampledata.xaml}">
+        <StackPanel>
+            <Label Content="Choose An Employee:" FontWeight="Bold"/>
+            <ListBox ItemsSource="{Binding Path=Employees, NotifyOnTargetUpdated=True, NotifyOnSourceUpdated=True}">
+                <ListBox.ItemTemplate>
+                    <ItemContainerTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Path=FirstName}"/>
+                            <Label Content="{Binding Path=LastName}"/>
+                        </StackPanel>
+                    </ItemContainerTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

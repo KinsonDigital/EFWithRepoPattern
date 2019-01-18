@@ -1,0 +1,9 @@
+﻿<local:EmployeeSampleData xmlns:local="clr-namespace:EFWithRepoPattern.Data.DesignSampleData"
+                           xmlns:entities="clr-namespace:EFWithRepoPattern.Data.Entities">
+    <local:EmployeeSampleData.Employees>
+        <entities:Employee EmployeeID="1" CompanyID="1" FirstName="John" LastName="Doe" Age="22"/>
+        <entities:Employee EmployeeID="2" CompanyID="1" FirstName="Bozo" LastName="Smith" Age="44"/>
+        <entities:Employee EmployeeID="3" CompanyID="1" FirstName="Jake" LastName="Jones" Age="36"/>
+        <entities:Employee EmployeeID="4" CompanyID="1" FirstName="JarJar" LastName="Binks" Age="29"/>
+    </local:EmployeeSampleData.Employees>
+</local:EmployeeSampleData>

@@ -8,13 +8,19 @@ namespace EFWithRepoPattern.ViewModels
     /// </summary>
     public class CompanyListViewModel : ViewModelBase
     {
+        #region Fields
+        private CompanyRepository _repository;
+        #endregion
+
+
         #region Constructors
         /// <summary>
         /// Creates a new instance of <see cref="CompanyListViewModel"/>.
         /// </summary>
         /// <param name="repository">The repository used to get the data.</param>
-        public CompanyListViewModel(CompanyRepository repository) : base(repository)
+        public CompanyListViewModel(CompanyRepository repository)
         {
+            _repository = repository;
             Companies = _repository.GetAll().ToArray();
         }
         #endregion

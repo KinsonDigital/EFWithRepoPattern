@@ -69,19 +69,29 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Data\DesignSampleData\CompaniesSampleData.cs" />
+    <Compile Include="Data\DesignSampleData\EmployeeSampleData.cs" />
     <Compile Include="Data\Repositories\CompanyRepository.cs" />
     <Compile Include="Data\Repositories\Core\IRepository.cs" />
     <Compile Include="Data\Repositories\Core\Repository.cs" />
     <Compile Include="Data\Repositories\DataContext\TestDBContext.cs" />
+    <Compile Include="Data\Repositories\EmployeeRepository.cs" />
     <Compile Include="UserControls\CompanyList.xaml.cs">
       <DependentUpon>CompanyList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\EmployeeList.xaml.cs">
+      <DependentUpon>EmployeeList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\CompanyListViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeListViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <DesignData Include="Data\DesignSampleData\CompaniesSampleData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </DesignData>
+    <Page Include="Data\DesignSampleData\EmployeeSampleData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,6 +107,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserControls\CompanyList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EmployeeList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -22,7 +22,7 @@ namespace EFWithRepoPattern.Data.Repositories
         #endregion
 
 
-        #region Props
+        #region Public Methods
         /// <summary>
         /// Gets all of the data related to companies.
         /// </summary>

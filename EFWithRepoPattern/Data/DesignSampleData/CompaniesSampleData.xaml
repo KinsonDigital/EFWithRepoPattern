@@ -15,4 +15,13 @@
             </entities:Company.Employees>
         </entities:Company>
     </local:CompaniesSampleData.Companies>
+    
+    <local:CompaniesSampleData.SelectedCompany>
+        <entities:Company CompanyID="1" Name="Company A">
+            <entities:Company.Employees>
+                <entities:Employee EmployeeID="1" CompanyID="1" FirstName="John" LastName="Doe" Age="22"/>
+                <entities:Employee EmployeeID="2" CompanyID="1" FirstName="Bozo" LastName="Smith" Age="44"/>
+            </entities:Company.Employees>
+        </entities:Company>
+    </local:CompaniesSampleData.SelectedCompany>
 </local:CompaniesSampleData>
