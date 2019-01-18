@@ -1,10 +1,8 @@
 namespace EFWithRepoPattern.Data.Entities
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("Company")]
     public partial class Company
@@ -12,7 +10,7 @@ namespace EFWithRepoPattern.Data.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Company()
         {
-            Employees = new HashSet<Employee>();
+            Employees = new List<Employee>();
         }
 
         public int CompanyID { get; set; }
@@ -22,6 +20,12 @@ namespace EFWithRepoPattern.Data.Entities
         public string Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employees { get; set; }
+        public virtual List<Employee> Employees { get; set; }
+
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

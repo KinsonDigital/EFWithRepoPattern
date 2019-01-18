@@ -10,7 +10,7 @@ namespace EFWithRepoPattern.Data.Entities
     public partial class Employee
     {
         [Key]
-        public int EmpoyeeID { get; set; }
+        public int EmployeeID { get; set; }
 
         public int CompanyID { get; set; }
 
