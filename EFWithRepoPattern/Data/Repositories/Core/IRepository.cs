@@ -3,7 +3,7 @@
 namespace EFWithRepoPattern.Data.Repositories.Core
 {
     /// <summary>
-    /// Provides basic functionality for pulling and pushing data to a datasource related to the given
+    /// Provides basic functionality for pulling and pushing data to a datasource/database related to the given
     /// <typeparamref name="TEntity"/> under the given <typeparamref name="TContext"/> database context.
     /// </summary>
     /// <typeparam name="TEntity">The type of entite in the database to manipulate.</typeparam>
